@@ -1,0 +1,30 @@
+.datatable-page-container {
+  padding-top: 1rem;
+}
+
+.datatable-content-container {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.datatable-title {
+  font-family: 'Roboto-bold', sans-serif;
+  font-size: 2rem;
+  color: #f8403a;
+}
+
+.datatable-table-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.datatable-table {
+  max-width: 90%;
+  width: 90%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
