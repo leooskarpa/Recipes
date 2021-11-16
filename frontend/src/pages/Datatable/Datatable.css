@@ -20,11 +20,60 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .datatable-table {
   max-width: 90%;
   width: 90%;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.datatable-filter-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.datatable-filter-keyword-input {
+  margin-right: 2rem;
+}
+
+.datatable-filter-select-container {
+  margin-right: 2rem;
+}
+
+.datatable-filter-select-form-control {
+  width: 200px;
+}
+
+.datatable-filter-button {
+  background-color: #f8403a;
+  color: white;
+  font-family: 'Roboto-bold', sans-serif;
+  padding: 0.75rem 0;
+  width: 6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3rem;
+}
+
+.datatable-filtered-download-button {
+  background-color: white;
+  color: #f8403a;
+  font-family: 'Roboto-bold', sans-serif;
+  padding: 0.75rem 0;
+  width: 6rem;
+  border-radius: 0.5rem;
+  border: 2px solid #f8403a;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
 }

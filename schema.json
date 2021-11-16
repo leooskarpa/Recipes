@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "Recipes",
+  "description": "Schema for Recipe object and its relationships",
+  "required": [
+    "id",
+    "name",
+    "steps",
+    "description",
+    "type",
+    "cooktime",
+    "preptime",
+    "servings",
+    "cousine",
+    "ingredients"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of a recipe."
+    },
+    "steps": {
+      "type": "array",
+      "description": "Steps for creating a recipe, array of steps.",
+      "additionalItems": true,
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "description": "An explanation of a step."
+          }
+        ]
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of a recipe."
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of a meal this recipe is describing, aka lunch, breakfast..."
+    },
+    "cooktime": {
+      "type": "integer",
+      "description": "Time needed for meal to cook."
+    },
+    "preptime": {
+      "type": "integer",
+      "description": "Time needed for preparation for cooking."
+    },
+    "servings": {
+      "type": "integer",
+      "description": "Number of servings this meal can provide."
+    },
+    "cousine": {
+      "type": "string",
+      "description": "Type of cousine, aka Mexican, Cuban..."
+    },
+    "ingredients": {
+      "type": "array",
+      "description": "Array of ingredients needed for this recipe.",
+      "additionalItems": true,
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "description": "Object describing an ingredient.",
+            "required": ["id", "amount", "name", "recipe_id"],
+            "properties": {
+              "id": {
+                "type": "integer",
+                "description": "Unique identifier."
+              },
+              "amount": {
+                "type": "string",
+                "description": "Amount of this ingredient needed for the recipe."
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of the ingredient"
+              },
+              "recipe_id": {
+                "type": "integer",
+                "description": "Foreign key towards recipe."
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
