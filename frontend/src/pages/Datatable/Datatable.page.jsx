@@ -62,7 +62,7 @@ const DatatablePage = () => {
 
   const filterData = event => {
     if (filterForm.word === '') {
-      return
+      setShownData(data)
     }
 
     if (filterForm.column === 'all' || filterForm.column === '') {
