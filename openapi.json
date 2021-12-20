@@ -1,0 +1,190 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "Recipe App", "version": "1.0.0" },
+  "paths": {
+    "/recipes": {
+      "get": {
+        "summary": "Get all recipes",
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": { "application/json": { "schema": { "type": "array" } } }
+          },
+          "500": { "description": "Internal server error" }
+        }
+      }
+    },
+    "/recipe/{id}": {
+      "get": {
+        "summary": "Get recipe by Id",
+        "responses": {
+          "200": {
+            "description": "Successful fetching recipe",
+            "content": { "application/json": { "schema": { "type": "array" } } }
+          },
+          "404": { "description": "Recipe with that Id doesn't exist." },
+          "500": { "description": "Internal server error" }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update recipe in db",
+        "responses": {
+          "200": { "description": "Successful updating recipe" },
+          "500": { "description": "Internal server error" }
+        },
+        "requestBody": {
+          "description": "Recipe to update in the db",
+          "content": {
+            "application/json": {
+              "schema": { "type": "object" },
+              "examples": {
+                "recipe": {
+                  "summary": "Recipe Example",
+                  "value": {
+                    "name": "Test 2",
+                    "preptime": 30,
+                    "cooktime": 60,
+                    "servings": 4
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Put new recipe in db",
+        "responses": {
+          "200": { "description": "Successfully deleting recipe at given id." },
+          "500": { "description": "Internal server error" }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
+      }
+    },
+    "/recipe/{id}/ingredients": {
+      "get": {
+        "summary": "Get recipe ingredients by recipe Id",
+        "responses": {
+          "200": {
+            "description": "Successful fetching ingredients",
+            "content": { "application/json": { "schema": { "type": "array" } } }
+          },
+          "404": {
+            "description": "Recipe with that Id or ingredients doesn't exist."
+          },
+          "500": { "description": "Internal server error" }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
+      }
+    },
+    "/recipe/{id}/country": {
+      "get": {
+        "summary": "Get recipe country by recipe Id",
+        "responses": {
+          "200": {
+            "description": "Successful fetching recipe country",
+            "content": { "application/json": { "schema": { "type": "array" } } }
+          },
+          "404": {
+            "description": "Recipe with that Id or with country doesn't exist."
+          },
+          "500": { "description": "Internal server error" }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
+      }
+    },
+    "/recipe/{id}/preptime": {
+      "get": {
+        "summary": "Get recipe preptime by recipe Id",
+        "responses": {
+          "200": {
+            "description": "Successful fetching recipe preptime",
+            "content": { "application/json": { "schema": { "type": "array" } } }
+          },
+          "404": {
+            "description": "Recipe with that Id or with preptime set doesn't exist."
+          },
+          "500": { "description": "Internal server error" }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ]
+      }
+    },
+    "/recipe": {
+      "post": {
+        "summary": "Put new recipe in db",
+        "responses": {
+          "200": { "description": "Successful creating new recipe" },
+          "500": { "description": "Internal server error" }
+        },
+        "requestBody": {
+          "description": "Recipe to add to the db",
+          "content": {
+            "application/json": {
+              "schema": { "type": "object" },
+              "examples": {
+                "recipe": {
+                  "summary": "Recipe Example",
+                  "value": {
+                    "id": 10,
+                    "name": "Test",
+                    "steps": "{{Boil water.}, {Put eggs in boiling water.}}",
+                    "preptime": 10,
+                    "cooktime": 20,
+                    "servings": 4,
+                    "type": "breakfast",
+                    "countryid": 1,
+                    "description": "Fast breakfast for fast people."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
