@@ -74,20 +74,20 @@
             "required": ["id", "amount", "name", "recipe_id"],
             "properties": {
               "id": {
-                "type": "integer",
-                "description": "Unique identifier."
+                "@context": "https://schema.org",
+                "@type": "Integer"
               },
               "amount": {
-                "type": "string",
-                "description": "Amount of this ingredient needed for the recipe."
+                "@context": "https://schema.org",
+                "@type": "String"
               },
               "name": {
-                "type": "string",
-                "description": "Name of the ingredient"
+                "@context": "https://schema.org",
+                "@type": "String"
               },
               "recipe_id": {
-                "type": "integer",
-                "description": "Foreign key towards recipe."
+                "@context": "https://schema.org",
+                "@type": "Integer"
               }
             }
           }

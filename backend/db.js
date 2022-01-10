@@ -8,6 +8,7 @@ const dbPool = new Pool({
   port: 5433,
 })
 
+// Queries
 const queryAllRecipes = () => {
   return `
 select recipe.name,

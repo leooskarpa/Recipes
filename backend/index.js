@@ -4,6 +4,7 @@ const db = require('./db.js')
 
 const app = express()
 const port = 3000
+
 const oapi = openapi({
   openapi: '3.0.0',
   info: {
